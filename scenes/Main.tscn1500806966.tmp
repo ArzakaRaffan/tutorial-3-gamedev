@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dsyfep1odrxje"]
+
+[ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://dvlyhuf4uyjqv" path="res://scenes/player.tscn" id="2_rvslj"]
+[ext_resource type="Texture2D" uid="uid://bn5qod8ojyvmi" path="res://assets/Ladder.png" id="3_0bbpv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbpv"]
+size = Vector2(25, 256)
+
+[node name="Root" type="Node2D" unique_id=918599496]
+
+[node name="Ladder" type="Sprite2D" parent="." unique_id=1862128259 groups=["ladder"]]
+position = Vector2(925, 127.99999)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_0bbpv")
+
+[node name="LadderArea" type="Area2D" parent="Ladder" unique_id=96207214]
+position = Vector2(-1681.8181, -232.72725)
+scale = Vector2(1.8181818, 1.8181818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/LadderArea" unique_id=1922411028]
+position = Vector2(946.5, 159)
+shape = SubResource("RectangleShape2D_0bbpv")
+
+[node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
+position = Vector2(296, 324)
+
+[node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
+position = Vector2(856, 324)
+
+[node name="Ground4" parent="." unique_id=1383284492 instance=ExtResource("1_elqb8")]
+position = Vector2(997, 180)
+rotation = 1.5707964
+
+[node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
+position = Vector2(576, 394)
+
+[node name="Player" parent="." unique_id=1427791864 instance=ExtResource("2_rvslj")]
+position = Vector2(295, 254)

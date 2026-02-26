@@ -1,14 +1,86 @@
 [gd_scene format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
+[ext_resource type="Texture2D" uid="uid://1gnk7uvdiajy" path="res://assets/1.png" id="1_rarhs"]
+[ext_resource type="Texture2D" uid="uid://dp8wu2d60itbe" path="res://assets/3.png" id="2_c01mt"]
+[ext_resource type="PackedScene" uid="uid://dvlyhuf4uyjqv" path="res://scenes/player.tscn" id="2_rvslj"]
+[ext_resource type="Texture2D" uid="uid://bn5qod8ojyvmi" path="res://assets/Ladder.png" id="3_0bbpv"]
+[ext_resource type="Texture2D" uid="uid://dhxxsd7a55in5" path="res://assets/2.png" id="3_nxtc6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bbpv"]
+size = Vector2(25, 256)
 
 [node name="Root" type="Node2D" unique_id=918599496]
+
+[node name="1" type="Sprite2D" parent="." unique_id=214777067]
+texture_filter = 1
+position = Vector2(574.25, -13.249981)
+scale = Vector2(2.7873263, 2.7453706)
+texture = ExtResource("1_rarhs")
+
+[node name="3" type="Sprite2D" parent="." unique_id=1832619034]
+position = Vector2(233, -200)
+texture = ExtResource("2_c01mt")
+
+[node name="4" type="Sprite2D" parent="." unique_id=302565413]
+position = Vector2(769, -311)
+texture = ExtResource("2_c01mt")
+
+[node name="2" type="Sprite2D" parent="." unique_id=2142628172]
+position = Vector2(574.0001, -27.000011)
+scale = Vector2(2.6631944, 2.5432098)
+texture = ExtResource("3_nxtc6")
+
+[node name="Ladder" type="Sprite2D" parent="." unique_id=1862128259 groups=["ladder"]]
+position = Vector2(925, 127.99999)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("3_0bbpv")
+
+[node name="LadderArea" type="Area2D" parent="Ladder" unique_id=96207214]
+position = Vector2(-1681.8181, -232.72725)
+scale = Vector2(1.8181818, 1.8181818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ladder/LadderArea" unique_id=1922411028]
+position = Vector2(946.5, 159)
+shape = SubResource("RectangleShape2D_0bbpv")
 
 [node name="Ground" parent="." unique_id=673580990 instance=ExtResource("1_elqb8")]
 position = Vector2(296, 324)
 
+[node name="Ground6" parent="." unique_id=1765567953 instance=ExtResource("1_elqb8")]
+position = Vector2(-51, 324)
+
+[node name="Ground11" parent="." unique_id=1626593005 instance=ExtResource("1_elqb8")]
+position = Vector2(-51, 324)
+
+[node name="Ground7" parent="." unique_id=586129093 instance=ExtResource("1_elqb8")]
+position = Vector2(-190, 117)
+rotation = 1.5707964
+
+[node name="Ground8" parent="." unique_id=700600012 instance=ExtResource("1_elqb8")]
+position = Vector2(-190, -231)
+rotation = 1.5707964
+
 [node name="Ground2" parent="." unique_id=1551337937 instance=ExtResource("1_elqb8")]
 position = Vector2(856, 324)
 
+[node name="Ground5" parent="." unique_id=2050775353 instance=ExtResource("1_elqb8")]
+position = Vector2(1204, 111)
+
+[node name="Ground9" parent="." unique_id=1808514396 instance=ExtResource("1_elqb8")]
+position = Vector2(1341, -95)
+rotation = 4.712389
+
+[node name="Ground10" parent="." unique_id=1804064114 instance=ExtResource("1_elqb8")]
+position = Vector2(1342, -440)
+rotation = 4.712389
+
+[node name="Ground4" parent="." unique_id=1383284492 instance=ExtResource("1_elqb8")]
+position = Vector2(997, 180)
+rotation = 1.5707964
+
 [node name="Ground3" parent="." unique_id=1648397147 instance=ExtResource("1_elqb8")]
 position = Vector2(576, 394)
+
+[node name="Player" parent="." unique_id=1427791864 instance=ExtResource("2_rvslj")]
+position = Vector2(209, 248)
