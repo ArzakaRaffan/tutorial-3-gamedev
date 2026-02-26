@@ -16,7 +16,7 @@ Pada tutorial kali ini, kami diperintahkan untuk menambahkan beeberapa fitur yan
 #### 4. Climb
 > Climb atau memanjat berarti player dapat memanjat sebuah tangga yang sudah tersedia di dalam world. Cara saya mengimplementasikannya adalah dengan menggunakan `Area2D` pada tangga sehingga dapat diidentifikasi oleh player. Saat memasuki ladder (belum memanjat), animasi character akan menjadi `preclimb` yang dapat digambarkan sebagai player yang menghadap ke ladder. Setelah preclimb, player dapat memanjat ladder ke atas dan ke bawah. Saat climbing, saya juga menggunakan animasi yang sudah disediakan di spritesheet. Cara untuk melakukan climb adalah dengan masuk dahulu ke area ladder sampai badan character menghadap ke ladder lalu menekan `w` untuk naik dan `s` untuk turun
 
-Bonus (Non moving-features)
+### Bonus (Non moving-features)
 #### 5. AnimationTree
 > Pada project ini saya pertama kali menggunakan AnimationTree dalam perancangan animasi dan perubahan state dari character. Menurut saya, penggunaan AnimationTree dalam perancangan animasi sangat dapat dikontrol, namun tidak terlalu intuitif bagi developer yang baru belajar membuatnya. Hal ini dikarenakan seluruh kemungkinan transisi animasi harus dipikirkan. Selain itu dalam script, banyak sekali animasi-animasi yang bergantian di-enable dan di-disable, menambah rasa sulit dan *ribet* dalam penyusunan animasi. Namun kembali lagi, karena sangat detail, maka animasi dan transisinya terasa sangat baik dan imersif.
 ![alt text](image.png)
