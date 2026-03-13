@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://c8odnqua8l8tl"]
+
+[ext_resource type="Texture2D" uid="uid://cwxjs0s31tov" path="res://assets/GoldCoinSprite/Coin1.png" id="1_6p0jd"]
+[ext_resource type="Script" uid="uid://d3bt0chaxmxp7" path="res://scripts/coins.gd" id="1_c07ru"]
+[ext_resource type="Texture2D" uid="uid://dcrr3lahquyi0" path="res://assets/GoldCoinSprite/Coin2.png" id="2_c07ru"]
+[ext_resource type="Texture2D" uid="uid://xa55a4wkqjy7" path="res://assets/GoldCoinSprite/Coin3.png" id="3_u3akd"]
+[ext_resource type="Texture2D" uid="uid://8ro14ab784id" path="res://assets/GoldCoinSprite/Coin4.png" id="4_oestc"]
+[ext_resource type="Texture2D" uid="uid://codufj2qudove" path="res://assets/GoldCoinSprite/Coin5.png" id="5_p3o4g"]
+[ext_resource type="Texture2D" uid="uid://cdjks4fyw22uj" path="res://assets/GoldCoinSprite/Coin6.png" id="6_gk6s5"]
+[ext_resource type="AudioStream" uid="uid://bxhbs4c5tdpij" path="res://assets/collect.wav" id="8_u3akd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wmmx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6p0jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_c07ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u3akd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oestc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p3o4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gk6s5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ogswy"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u3akd"]
+
+[node name="coins" type="CharacterBody2D" unique_id=2147459943]
+script = ExtResource("1_c07ru")
+
+[node name="animation" type="AnimatedSprite2D" parent="." unique_id=1742561691]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0wmmx")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.3685276
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=646216011]
+shape = SubResource("CircleShape2D_ogswy")
+disabled = true
+
+[node name="collect" type="Area2D" parent="." unique_id=236036093]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collect" unique_id=1131533296]
+shape = SubResource("CircleShape2D_u3akd")
+
+[node name="collect2" type="AudioStreamPlayer2D" parent="." unique_id=1180590898]
+stream = ExtResource("8_u3akd")
+
+[connection signal="body_entered" from="collect" to="." method="_on_collect_body_entered"]
