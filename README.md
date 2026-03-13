@@ -1,4 +1,4 @@
-### Latihan Mandiri: Eksplorasi Mekanika Pergerakan
+### Latihan Mandiri: Eksplorasi Mekanika Pergerakan (TUTORIAL 3)
 
 Pada tutorial kali ini, kami diperintahkan untuk menambahkan beeberapa fitur yang umumnya terdapat dalam sebuah game platformer. Dalam project ini, saya mengimplementasikan beberapa hal, yakni:
 
@@ -22,3 +22,14 @@ Bonus (Non moving-features)
 
 
 ![alt text](image.png)
+
+
+### Latihan Mandiri: sfx dan interaksi (TUTORIAL 5)
+
+#### 1. SFX & BGM
+
+> Saya mengimplementasikan beberapa sfx seperti berjalan, melompat, dan juga saat collect coins. Saya menggunakan trigger dari movement untuk mem-play sfx. contohnya berjalan dan melompat saya sesuaikan dengan movement dari player. Collect coins di-trigger dari area2D collision antara coins dan player. BGM saya play dari awal permainan hingga akhir dengan loop
+
+#### Coin Interaction
+
+> Saya mengimplementasikan koin hanya sebagai entity dengan Area2D yang jika dikenai oleh player, maka akan menghilang dengan animasi tween dan diakhiri dengan `queue_free()`. Signal akan dikirimkan ke player dan di UI, jumlah coins collected bisa bertambah.
